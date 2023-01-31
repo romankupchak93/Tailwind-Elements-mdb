@@ -552,6 +552,10 @@
     "pathToFile": "../demo/sites/mdb/sidenav.html"
   },
   {
+    "fileName": "sites/mdb/validation.html",
+    "pathToFile": "../demo/sites/mdb/validation.html"
+  },
+  {
     "fileName": "sites/bs/hover-effects.html",
     "pathToFile": "../demo/sites/bs/hover-effects.html"
   },

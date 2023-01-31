@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Tailwind Elements" />
+    <title>Validation</title>
+
+    <!-- Roboto font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+      rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+    <!-- Tailwind -->
+    <link rel="stylesheet" href="../../css/tailwind.min.css" />
+    <!-- PRISM -->
+    <link rel="stylesheet" href="../../dev/css/new-prism.css" />
+    <!-- Custom styles -->
+    <style></style>
+  </head>
+
+  <body class="dark:bg-zinc-800">
+    <!-- Start your project here-->
+    <div class="mx-10 lg:mx-64">
+      <h1>Validation</h1>
+      <h3 class="mb-4 text-3xl font-medium leading-tight text-red-600">
+        Basic
+      </h3>
+
+      <div
+        class="mb-10 block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-zinc-700">
+        <form data-te-form-ref novalidate>
+          <div class="relative mb-12" data-te-input-wrapper-init>
+            <input
+              required
+              type="email"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear valid:border-2 valid:border-green-500 focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-gray-200 dark:placeholder:text-gray-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email" />
+            <label
+              for="exampleInputEmail1"
+              class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-500 transition-all duration-200 ease-out peer-valid:!text-green-500 peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blue-500 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-gray-200 dark:peer-focus:text-gray-200"
+              >Email address</label
+            >
+            <small
+              class="invisible absolute mt-1 w-full text-green-500 peer-valid:visible dark:text-green-200"
+              data-te-input-helper-ref
+              >Looks good!</small
+            >
+            <small
+              class="invisible absolute mt-1 w-full text-red-500 dark:text-red-200"
+              data-te-input-helper-ref
+              data-te-input-helper-invalid
+              >Please provide a valid email.</small
+            >
+          </div>
+          <div class="relative mb-6" data-te-input-wrapper-init>
+            <input
+              required
+              type="password"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear valid:border-2 valid:border-green-500 focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-gray-200 dark:placeholder:text-gray-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              id="exampleInputPassword1"
+              placeholder="Password" />
+            <label
+              for="exampleInputPassword1"
+              class="pointer-events-none absolute top-0 left-3 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-gray-500 transition-all duration-200 ease-out peer-valid:!text-green-500 peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-blue-500 peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-gray-200 dark:peer-focus:text-gray-200"
+              >Password</label
+            >
+            <small
+              class="invisible absolute mt-1 w-full text-green-500 peer-valid:visible dark:text-green-200"
+              data-te-input-helper-ref
+              >Looks good!</small
+            >
+            <small
+              class="invisible absolute mt-1 w-full text-red-500 dark:text-red-200"
+              data-te-input-helper-ref
+              data-te-input-helper-invalid
+              >Please provide a valid email.</small
+            >
+          </div>
+          <div data-te-input-wrapper-init class="mb-6">
+            <input
+              required
+              type="checkbox"
+              class="peer float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-white bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-blue-600 checked:bg-blue-600 valid:checked:border-green-500 valid:checked:bg-green-500 focus:outline-none"
+              id="exampleCheck1" />
+            <label
+              class="inline-block text-gray-800 dark:text-white"
+              for="exampleCheck1"
+              >Check me out</label
+            >
+            <small
+              class="invisible absolute mt-1 w-full text-green-500 peer-valid:visible dark:text-green-200"
+              data-te-input-helper-ref
+              >Looks good!</small
+            >
+            <small
+              class="invisible absolute mt-1 w-full text-red-500 dark:text-red-200"
+              data-te-input-helper-ref
+              data-te-input-helper-invalid
+              >Please provide a valid email.</small
+            >
+          </div>
+          <button
+            type="submit"
+            class="rounded bg-blue-600 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- End your project here-->
+
+    <!-- Theme switcher -->
+    <script type="text/javascript" src="../../js/theme.min.js"></script>
+    <!-- MDB -->
+    <script type="text/javascript" src="../../js/index.min.js"></script>
+    <!-- PRISM -->
+    <script type="text/javascript" src="../../dev/js/new-prism.js"></script>
+    <!-- MDB SNIPPET -->
+    <script
+      type="text/javascript"
+      src="../../dev/js/dist/mdbsnippet.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript">
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll("[data-te-form-ref]");
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              const smallsInvalid = form.querySelectorAll(
+                "[data-te-input-helper-invalid]"
+              );
+              smallsInvalid.forEach((small) => {
+                small.classList.add("peer-invalid:visible");
+              });
+              const labels = form.querySelectorAll(
+                "[data-te-input-wrapper-init]>label"
+              );
+              labels.forEach((label) => {
+                label.classList.add("peer-invalid:!text-red-500");
+              });
+              const inputs = form.querySelectorAll(
+                "[data-te-input-wrapper-init]>input"
+              );
+              inputs.forEach((input) => {
+                input.classList.add(
+                  ..."invalid:border-2 invalid:border-rose-500".split(" ")
+                );
+              });
+            },
+            false
+          );
+        });
+      })();
+    </script>
+  </body>
+</html>
