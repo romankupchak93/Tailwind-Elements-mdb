@@ -32,13 +32,13 @@
       </h3>
 
       <div
-        class="mb-10 block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-zinc-700">
+        class="w-100 mb-10 block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-zinc-700">
         <form data-te-form-ref novalidate>
-          <div class="relative mb-12" data-te-input-wrapper-init>
+          <div class="group peer relative mb-12" data-te-input-wrapper-init>
             <input
               required
               type="email"
-              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear valid:border-2 valid:border-green-500 focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-gray-200 dark:placeholder:text-gray-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-gray-200 dark:placeholder:text-gray-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               placeholder="Enter email" />
@@ -63,7 +63,7 @@
             <input
               required
               type="password"
-              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear valid:border-2 valid:border-green-500 focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-gray-200 dark:placeholder:text-gray-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+              class="peer block min-h-[auto] w-full rounded border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-gray-200 dark:placeholder:text-gray-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
               id="exampleInputPassword1"
               placeholder="Password" />
             <label
@@ -80,30 +80,19 @@
               class="invisible absolute mt-1 w-full text-red-500 dark:text-red-200"
               data-te-input-helper-ref
               data-te-input-helper-invalid
-              >Please provide a valid email.</small
+              >Please provide a valid password.</small
             >
           </div>
-          <div data-te-input-wrapper-init class="mb-6">
+          <div data-te-input-checkbox-ref class="mb-6">
             <input
               required
               type="checkbox"
-              class="peer float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-white bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-blue-600 checked:bg-blue-600 valid:checked:border-green-500 valid:checked:bg-green-500 focus:outline-none"
+              class="peer float-left mt-1 mr-2 h-4 w-4 cursor-pointer appearance-none rounded-sm border border-gray-300 bg-white bg-contain bg-center bg-no-repeat align-top transition duration-200 checked:border-blue-600 checked:bg-blue-600 valid:border-green-500 focus:outline-none"
               id="exampleCheck1" />
             <label
-              class="inline-block text-gray-800 dark:text-white"
+              class="inline-block text-gray-800 peer-valid:text-green-500 dark:text-white"
               for="exampleCheck1"
               >Check me out</label
-            >
-            <small
-              class="invisible absolute mt-1 w-full text-green-500 peer-valid:visible dark:text-green-200"
-              data-te-input-helper-ref
-              >Looks good!</small
-            >
-            <small
-              class="invisible absolute mt-1 w-full text-red-500 dark:text-red-200"
-              data-te-input-helper-ref
-              data-te-input-helper-invalid
-              >Please provide a valid email.</small
             >
           </div>
           <button
@@ -151,18 +140,25 @@
                 small.classList.add("peer-invalid:visible");
               });
               const labels = form.querySelectorAll(
-                "[data-te-input-wrapper-init]>label"
+                "[data-te-input-wrapper-init]>label, [data-te-input-checkbox-ref]>label"
               );
               labels.forEach((label) => {
                 label.classList.add("peer-invalid:!text-red-500");
               });
-              const inputs = form.querySelectorAll(
-                "[data-te-input-wrapper-init]>input"
+              const inputMasks = form.querySelectorAll(
+                "[data-te-input-notch-ref]"
               );
-              inputs.forEach((input) => {
-                input.classList.add(
-                  ..."invalid:border-2 invalid:border-rose-500".split(" ")
-                );
+              inputMasks.forEach((input) => {
+                // input.classList.add(...'peer-invalid:check-invalid peer-valid:check-valid'.split(" "));
+                input
+                  .querySelector("[data-te-input-notch-leading-ref]")
+                  .classList.add(
+                    ..."peer-[.invalid]:border-red-500 peer-[.valid]:border-green-500".split(
+                      " "
+                    )
+                  );
+                // input.querySelector("[data-te-input-notch-middle-ref]").classList.add(..."border-red-500 valid:border-green-500 group-valid:border-green-500 peer-valid:border-green-500 valid:border-green-500".split(" "));
+                // input.querySelector("[data-te-input-notch-trailing-ref]").classList.add(..."border-red-500 valid:border-green-500 group-valid:border-green-500 peer-valid:border-green-500 valid:border-green-500".split(" "));
               });
             },
             false
