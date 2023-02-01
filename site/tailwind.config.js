@@ -1,6 +1,7 @@
 module.exports = {
   content: [
     "./layouts/**/*.html",
+    "./themes/**/*.html",
     "./content/**/*.html",
     "./static/**/*.js",
     "../src/**/*.js",

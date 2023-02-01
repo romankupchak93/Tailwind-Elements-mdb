@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently npm:watch:*",
+    "start": "concurrently npm:watch:tailwind npm:watch:hugo",
+    "start:dark": "concurrently npm:watch:tailwind npm:watch:hugo:dark",
     "watch:tailwind": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css --watch",
     "watch:hugo": "hugo server -D",
+    "watch:hugo:dark": "hugo server -D -e dark",
     "build:tailwind": "tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css",
-    "build": "hugo --minify"
+    "build": "hugo --minify",
+    "build:dark": "hugo --minify -e dark"
   },
   "author": "",
   "license": "ISC",
