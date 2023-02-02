@@ -30,7 +30,7 @@ const DATA_FOCUSED = "data-te-input-focused";
 const DATA_FORM_COUNTER = "data-te-input-form-counter";
 
 const NOTCH_CLASSES =
-  "group flex absolute left-0 top-0 w-full max-w-full h-full text-left pointer-events-none peer-valid:bg-yellow-100 peer-invalid:invalid peer-valid:valid";
+  "group flex absolute left-0 top-0 w-full max-w-full h-full text-left pointer-events-none";
 const NOTCH_DIV_CLASSES =
   "pointer-events-none border border-solid box-border bg-transparent transition-all duration-200 ease-linear motion-reduce:transition-none";
 
