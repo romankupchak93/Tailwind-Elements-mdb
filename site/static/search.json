@@ -655,6 +655,18 @@
     }
   },
   {
+    "href": "/docs/standard/forms/validation/",
+    "name": "Validation",
+    "keywords": [
+      "valid",
+      "invalid"
+    ],
+    "category": "Forms",
+    "priority": {
+      "validation": 1
+    }
+  },
+  {
     "href": "/docs/standard/forms/form-templates/",
     "name": "Form templates",
     "keywords": [
