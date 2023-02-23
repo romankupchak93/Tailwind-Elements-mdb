@@ -34,7 +34,10 @@
       <div
         class="w-100 mb-10 block max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-zinc-700">
         <form data-te-form-ref novalidate>
-          <div class="group peer relative mb-12" data-te-input-wrapper-init>
+          <div
+            class="group peer relative mb-12"
+            data-te-input-wrapper-init
+            data-te-class-notch-middle-normal="peer-valid:!border-red-500 border-neutral-300 dark:border-neutral-600 group-data-[te-input-focused]:shadow-[0_1px_0_0_#3b71ca] group-data-[te-input-focused]:border-primary">
             <input
               required
               type="email"
@@ -144,21 +147,6 @@
               );
               labels.forEach((label) => {
                 label.classList.add("peer-invalid:!text-red-500");
-              });
-              const inputMasks = form.querySelectorAll(
-                "[data-te-input-notch-ref]"
-              );
-              inputMasks.forEach((input) => {
-                // input.classList.add(...'peer-invalid:check-invalid peer-valid:check-valid'.split(" "));
-                input
-                  .querySelector("[data-te-input-notch-leading-ref]")
-                  .classList.add(
-                    ..."peer-[.invalid]:border-red-500 peer-[.valid]:border-green-500".split(
-                      " "
-                    )
-                  );
-                // input.querySelector("[data-te-input-notch-middle-ref]").classList.add(..."border-red-500 valid:border-green-500 group-valid:border-green-500 peer-valid:border-green-500 valid:border-green-500".split(" "));
-                // input.querySelector("[data-te-input-notch-trailing-ref]").classList.add(..."border-red-500 valid:border-green-500 group-valid:border-green-500 peer-valid:border-green-500 valid:border-green-500".split(" "));
               });
             },
             false
