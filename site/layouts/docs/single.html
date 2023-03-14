@@ -40,7 +40,9 @@
       {{ partial "sidenav/standard.html" . }}
     </nav>
     <div
-      class="{{ if ne $hidden_sidenav true }}xl:!pl-60{{ end }} mt-10"
+      class="{{ if ne $hidden_sidenav true }}
+        xl:!pl-60
+      {{ end }} mt-10 flex h-[calc(100vh-98px)] flex-col"
       id="page-content">
       <div
         class="{{ if eq $hidden_sidenav true }}
@@ -150,7 +152,7 @@
               {{ end }}
 
 
-              <main>{{ .Content }}</main>
+              <main class="mb-16">{{ .Content }}</main>
             </div>
 
             <!-- Sidebar  -->
@@ -208,7 +210,7 @@
                 </h1>
 
                 <hr class="my-10 dark:border-neutral-600" />
-                <main>
+                <main class="mb-16">
                   {{ with $page_resources.GetMatch "a.html" }}
                     {{ .Content }}
                   {{ end }}
@@ -229,9 +231,8 @@
           {{ end }}
         </div>
       </div>
+      {{ partial "footer/footer-docs.html" . }}
     </div>
-
-    {{ partial "footer/footer-docs.html" . }}
 
     {{ if ne $hidden_sidenav true }}
       <script>
